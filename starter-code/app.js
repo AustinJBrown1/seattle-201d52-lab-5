@@ -29,9 +29,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  var theSum = a * b;
-  var message = 'The product of ' + a + ' and ' + b + ' is ' + theSum + '.';
-  return [theSum, message];
+  var theProduct = a * b;
+  var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
+  return [theProduct, message];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -52,11 +52,31 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  //create an array
+  var sumAndMultArray = [];
 
+  // Get Sum of all and push to array
+  var numOne = (sum(a, b));
+  var totalSum = (sum(numOne[0], c));
+  sumAndMultArray.push(totalSum[0]); 
+
+  // multply all elements and push to array
+  var multiplyOne = (multiply(a, b));
+  var totalMult = (multiply(multiplyOne[0], c));
+  sumAndMultArray.push(totalMult[0]);
+  
+  // 4 and 7 and 5 sum to 16 . and push to array
+  var messageSum =  a + ' and ' + b + ' and ' + c + ' sum to ' + totalSum[0] + '.';
+  sumAndMultArray.push(messageSum);
+
+  //"The product of 4 and 7 and 5 is 140." and push to array
+  var messageMult = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + totalMult[0] + '.';
+  sumAndMultArray.push(messageMult);
+  return sumAndMultArray;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
